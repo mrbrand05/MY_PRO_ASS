@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+<meta charset="utf-8">
+<meta http-equiv="refresh" content="30">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<style type="text/css">
+		#winD{width: 100%;height: 800px;
+			background-size:100% 100%;}
+		.www{margin-top: 300px;
+			background-color: rgba(0,0,0,0.4);
+			color: white;}	
+		.panel-footer{	background-color: rgba(0,0,0,0.4);
+				text-transform:uppercase; }	
+	</style>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl" >
+	<div id="winD" style="background-image: url('{{info.img}}');">
+		<div class="row">
+			<div class="col-md-5">
+			</div >
+			<div class="col-md-5">
+				<div class="panel  www">
+					<div class="panel-heading">
+						<h3>{{info.title}}</h3></div>
+					<div class="panel-body">{{info.dis}}</div>
+					<div class="panel-footer">
+						<button ng-click="fn()" class="btn btn-warning">click</button>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+			</div>  
+		</div>
+	</div>
+<script type="text/javascript">
+	var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+	$scope.index=0;
+	$scope.info;
+	$scope.fn=function(){
+		$scope.len_data=$scope.db.length;
+		if($scope.index<$scope.len_data){
+			$scope.info=$scope.db[$scope.index];
+			$scope.index++;
+		}
+		else {
+			$scope.index=0;
+		}
+	}
+ $scope.db=[{dis:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://3.bp.blogspot.com/-AJ9Cw3DdY48/UFCb1npjRHI/AAAAAAAAALs/y1BaWpM2WfI/s1600/Nature-wallpaper+%286%29.jpg",title:"Animal First Headding"},
+ {dis:"Consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enimadipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://3.bp.blogspot.com/-b13LnqbC-0g/T4Pl2HnT1zI/AAAAAAAABWA/faQcheu7c1A/s1600/bright-sunshine-sky-wallpaper.jpg",title:" Second Headding"},
+ {dis:"Ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://3.bp.blogspot.com/-dqRKkCpNAjU/UTvUUfDkkOI/AAAAAAAADVU/R_ZCvnV48s8/s1600/img-wallpapers-green-swirl-wallpaper-acm321-12065.jpg",title:"Ruhay Third Headding"},
+ {dis:"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://3.bp.blogspot.com/-AJ9Cw3DdY48/UFCb1npjRHI/AAAAAAAAALs/y1BaWpM2WfI/s1600/Nature-wallpaper+%286%29.jpg",title:"Orange First Headding"},
+ {dis:"http://3.bp.blogspot.com Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://4.bp.blogspot.com/-bWGh7e9XTFo/ThyXg2OWCJI/AAAAAAAAASA/zkhQ5QtFpB4/s1600/nature-scenes-wallpaper.jpg",title:"Friend Next Headding"},
+ {dis:"ArjunDeep it amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna adipisicing elit, sed do eiusmodtempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo aliqua. Ut enim ad minim veniam,quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo",img:"http://3.bp.blogspot.com/-5V5hOrWVDJM/T1jV6Pms4vI/AAAAAAAAUxc/_y0XjJyPNME/s1600/Full-HD-Desktop-Hd-nature-wallpaper-for-Desktop-Background.jpg",title:"This My Six Headding"}
+ ];
+});
+</script>
+</body>
+</html>
